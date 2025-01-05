@@ -26,7 +26,7 @@ class MagazineTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MagazineTableViewCell", for: indexPath) as! MagazineTableViewCell
             
-        // 이미지 킹피셔로 옵셔널 처리
+        // 이미지 킹피셔로 옵셔널 처리하기
         let row = magazine[indexPath.row]
         let image = row.photo_image
         if let image {
@@ -37,7 +37,7 @@ class MagazineTableViewController: UITableViewController {
         }
         // 제목,,, 자동 줄바꿈? 하고싶어요 😂
 //        cell.titleLabel.lineBreakMode = .byWordWrapping // 단어 단위로 줄바꿈
-//        cell.titleLabel.frame = CGRect(x: 30, y: 365, width: 200, height: 100) // 적절한 크기 지정
+//        cell.titleLabel.frame = CGRect(x: 30, y: 365, width: 200, height: 100) // 적절한 크기 지정...안되농,,,
 //        cell.titleLabel.sizeToFit()
         
         cell.photo_Image.contentMode = .scaleAspectFill
@@ -54,7 +54,6 @@ class MagazineTableViewController: UITableViewController {
          @IBOutlet weak var subtitleLabel: UILabel!
          @IBOutlet weak var dateLabel: UILabel!
          */
-        // 제목, 부제목
         cell.titleLabel.text = row.title
         cell.subtitleLabel.text = row.subtitle
         
@@ -63,7 +62,6 @@ class MagazineTableViewController: UITableViewController {
         cell.subtitleLabel.font = .boldSystemFont(ofSize: 13)
         cell.subtitleLabel.textColor = .darkGray
         
-        // 날짜 - 데이트 포멧으로 처리
         let format = DateFormatter()
         format.dateFormat = "yyMMdd"
         
