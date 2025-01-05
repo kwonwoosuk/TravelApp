@@ -90,7 +90,18 @@ class ShoppingTableViewController: UITableViewController {
         
         return cell
     }
-    
+    // 우측 스와이프를 통한 쇼핑 목록 삭제 기능 !!
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            
+            if editingStyle == .delete {
+                
+                shopping.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                
+            } else if editingStyle == .insert {
+                
+            }
+        }
     
     
 
