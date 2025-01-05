@@ -16,6 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemGray2Color"/>
                     </tabBar>
                     <connections>
                         <segue destination="JWf-8j-WlZ" kind="relationship" relationship="viewControllers" id="kQO-P1-o9F"/>
@@ -30,19 +31,63 @@
         <!--TRAVEL-->
         <scene sceneID="kHt-Ou-SS2">
             <objects>
-                <tableViewController id="9fe-0D-IBE" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Gsx-ue-u3A">
+                <tableViewController id="9fe-0D-IBE" customClass="MagazineTableViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Gsx-ue-u3A">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kD0-tQ-2Eg">
-                                <rect key="frame" x="0.0" y="50" width="393" height="44.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MagazineTableViewCell" rowHeight="477" id="kD0-tQ-2Eg" customClass="MagazineTableViewCell" customModule="TravelApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="477"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kD0-tQ-2Eg" id="ADG-0X-5bd">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="477"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g0y-39-fgr">
+                                            <rect key="frame" x="28" y="19" width="337" height="337"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="g0y-39-fgr" secondAttribute="height" multiplier="1:1" id="Ko7-3k-e6T"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35E-Ml-b5j">
+                                            <rect key="frame" x="323" y="453" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vw-Ba-El3">
+                                            <rect key="frame" x="28" y="393" width="42" height="20.333333333333314"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibq-gn-njm">
+                                            <rect key="frame" x="28" y="364" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="g0y-39-fgr" firstAttribute="top" secondItem="ADG-0X-5bd" secondAttribute="topMargin" constant="8" id="D44-Ns-TAu"/>
+                                        <constraint firstItem="0vw-Ba-El3" firstAttribute="leading" secondItem="ADG-0X-5bd" secondAttribute="leadingMargin" constant="8" id="DjY-uH-twQ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="35E-Ml-b5j" secondAttribute="trailing" constant="8" id="RWl-Xa-oW6"/>
+                                        <constraint firstItem="g0y-39-fgr" firstAttribute="leading" secondItem="ADG-0X-5bd" secondAttribute="leadingMargin" constant="8" id="SEF-3B-xAd"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="g0y-39-fgr" secondAttribute="trailing" constant="8" id="apK-r3-MSE"/>
+                                        <constraint firstItem="0vw-Ba-El3" firstAttribute="top" secondItem="Ibq-gn-njm" secondAttribute="bottom" constant="8" id="b4a-xC-VsI"/>
+                                        <constraint firstItem="Ibq-gn-njm" firstAttribute="leading" secondItem="ADG-0X-5bd" secondAttribute="leadingMargin" constant="8" id="baz-ya-0A3"/>
+                                        <constraint firstItem="35E-Ml-b5j" firstAttribute="bottom" secondItem="ADG-0X-5bd" secondAttribute="bottomMargin" constant="8" id="gmJ-HP-cVc"/>
+                                        <constraint firstItem="g0y-39-fgr" firstAttribute="centerX" secondItem="ADG-0X-5bd" secondAttribute="centerX" id="nEx-Ab-flc"/>
+                                        <constraint firstItem="Ibq-gn-njm" firstAttribute="top" secondItem="g0y-39-fgr" secondAttribute="bottom" constant="8" id="t7N-wt-crH"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="35E-Ml-b5j" id="aKZ-gy-osG"/>
+                                    <outlet property="photo_Image" destination="g0y-39-fgr" id="gHZ-oq-Cv6"/>
+                                    <outlet property="subtitleLabel" destination="0vw-Ba-El3" id="Voq-Mh-oNK"/>
+                                    <outlet property="titleLabel" destination="Ibq-gn-njm" id="doa-Gc-8bV"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -51,21 +96,24 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="TRAVEL" id="9qE-ZT-Lcu"/>
+                    <connections>
+                        <outlet property="magazineTableView" destination="Gsx-ue-u3A" id="OnJ-aP-4yR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ff-ch-sIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1763" y="54"/>
+            <point key="canvasLocation" x="1762.5954198473282" y="53.521126760563384"/>
         </scene>
         <!--도시 상세 정보-->
         <scene sceneID="sRN-DV-93p">
             <objects>
-                <tableViewController id="ykD-KE-Lj6" sceneMemberID="viewController">
+                <tableViewController id="ykD-KE-Lj6" customClass="TravelTableViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="pwP-3t-gEG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="LKK-Gh-hge">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailTableViewCell" id="LKK-Gh-hge" customClass="TravelTableViewCell" customModule="TravelApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="44.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LKK-Gh-hge" id="cFV-c3-TX3">
@@ -199,7 +247,7 @@
         <scene sceneID="DRu-GF-ug6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JWf-8j-WlZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Travel" id="t6P-3C-XQI"/>
+                    <tabBarItem key="tabBarItem" title="Travel" image="airplane" catalog="system" selectedImage="airplane" id="t6P-3C-XQI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="O55-gx-EZE">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -218,7 +266,7 @@
         <scene sceneID="EN0-Nw-X0y">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UNB-Kl-5K4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="도시 상세 정보" id="DGw-hd-T5J"/>
+                    <tabBarItem key="tabBarItem" title="도시 상세 정보" image="building.fill" catalog="system" id="DGw-hd-T5J"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gNr-Na-VLp">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -237,7 +285,7 @@
         <scene sceneID="HGG-u1-6aO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zKJ-UC-Gvw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="쇼핑" id="Obq-NO-nNY"/>
+                    <tabBarItem key="tabBarItem" title="쇼핑" image="cart.fill" catalog="system" id="Obq-NO-nNY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="58O-EG-CCQ">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -254,12 +302,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="airplane" catalog="system" width="128" height="115"/>
+        <image name="building.fill" catalog="system" width="90" height="128"/>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
