@@ -57,13 +57,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vw-Ba-El3">
-                                            <rect key="frame" x="28" y="393" width="42" height="20.333333333333314"/>
+                                            <rect key="frame" x="28" y="393" width="337" height="20.333333333333314"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibq-gn-njm">
-                                            <rect key="frame" x="28" y="364" width="42" height="21"/>
+                                            <rect key="frame" x="28" y="364" width="337" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -71,9 +71,11 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="g0y-39-fgr" firstAttribute="top" secondItem="ADG-0X-5bd" secondAttribute="topMargin" constant="8" id="D44-Ns-TAu"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0vw-Ba-El3" secondAttribute="trailing" constant="8" id="DPW-0U-GqB"/>
                                         <constraint firstItem="0vw-Ba-El3" firstAttribute="leading" secondItem="ADG-0X-5bd" secondAttribute="leadingMargin" constant="8" id="DjY-uH-twQ"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="35E-Ml-b5j" secondAttribute="trailing" constant="8" id="RWl-Xa-oW6"/>
                                         <constraint firstItem="g0y-39-fgr" firstAttribute="leading" secondItem="ADG-0X-5bd" secondAttribute="leadingMargin" constant="8" id="SEF-3B-xAd"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ibq-gn-njm" secondAttribute="trailing" constant="8" id="Ssk-Mq-b7P"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="g0y-39-fgr" secondAttribute="trailing" constant="8" id="apK-r3-MSE"/>
                                         <constraint firstItem="0vw-Ba-El3" firstAttribute="top" secondItem="Ibq-gn-njm" secondAttribute="bottom" constant="8" id="b4a-xC-VsI"/>
                                         <constraint firstItem="Ibq-gn-njm" firstAttribute="leading" secondItem="ADG-0X-5bd" secondAttribute="leadingMargin" constant="8" id="baz-ya-0A3"/>

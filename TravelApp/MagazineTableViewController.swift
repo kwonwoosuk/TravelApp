@@ -28,28 +28,8 @@ class MagazineTableViewController: UITableViewController {
             
         // 이미지 킹피셔로 옵셔널 처리하기
         let row = magazine[indexPath.row]
-//        cell.configureData(row: row)
-//        
-//        
-//        else {
-//            cell.photo_Image.image = UIImage(systemName: "person")
-//        }
-//         제목,,, 자동 줄바꿈? 하고싶어요 😂
-//        cell.titleLabel.lineBreakMode = .byWordWrapping // 단어 단위로 줄바꿈
-//        cell.titleLabel.frame = CGRect(x: 30, y: 365, width: 200, height: 100) // 적절한 크기 지정...안되농,,,
-//        cell.titleLabel.sizeToFit()
-
-        /*
-         let title: String
-         let subtitle: String
-         var photo_image: String? kingfisher사용
-         let date: String
-         
-         @IBOutlet weak var photo_Image: UIImageView!
-         @IBOutlet weak var titleLabel: UILabel!
-         @IBOutlet weak var subtitleLabel: UILabel!
-         @IBOutlet weak var dateLabel: UILabel!
-         */
+        cell.configureData(row: row)
+        
   
         return cell
     }

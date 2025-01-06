@@ -33,9 +33,11 @@ class TravelTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: adViewTableViewCell.identifier, for: indexPath) as! adViewTableViewCell
             
             let randomColor = ["viewColor1", "viewColor2"]
+            
             cell.backView.backgroundColor = UIColor(named: randomColor.randomElement() ?? "viewColor1")
             cell.backView.layer.cornerRadius = 15
             cell.backView.clipsToBounds = true
+            
             cell.titleLabel.text = row.title
             cell.titleLabel.numberOfLines = 0
             cell.titleLabel.textColor = .black
@@ -49,7 +51,6 @@ class TravelTableViewController: UITableViewController {
             cell.adLabel.layer.cornerRadius = 5
             cell.adLabel.clipsToBounds = true
             cell.adLabel.font = .systemFont(ofSize: 12)
-            tableView.rowHeight = UITableView.automaticDimension
             return cell
         } else {
             
