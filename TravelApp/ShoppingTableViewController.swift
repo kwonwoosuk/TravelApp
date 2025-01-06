@@ -69,10 +69,6 @@ class ShoppingTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingTableViewCell", for: indexPath) as! ShoppingTableViewCell
         
         let row = shopping[indexPath.row]
-        
-        
-        
-        
         let star = row.star ? "star.fill" : "star"
         cell.starButton.setImage(UIImage(systemName: star), for: .normal)
         // 버튼을 구분짓기 위해서 tag를 분류
@@ -90,6 +86,10 @@ class ShoppingTableViewController: UITableViewController {
         
         return cell
     }
+
+
+
+
     // 우측 스와이프를 통한 쇼핑 목록 삭제 기능 !!
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             
