@@ -87,16 +87,16 @@ class CityViewTableViewController: UITableViewController {
             switch domesticSeg.selectedSegmentIndex {
             case 0:
                 Cities = city.filter {
-                    $0.city_name.contains(text) ||
-                    $0.city_english_name.contains(text) ||
-                    $0.city_explain.contains(text)
+                    $0.city_name.lowercased().contains(text) ||
+                    $0.city_english_name.lowercased().contains(text) ||
+                    $0.city_explain.lowercased().contains(text)
                 }
             case 1:
                 Cities = city.filter{
                     $0.domestic_travel &&
-                    ($0.city_name.contains(text) ||
-                     $0.city_english_name.contains(text) ||
-                     $0.city_explain.contains(text)) //  논리 연산자의 우선순위때문에 ()먼저 묶음
+                    ($0.city_name.lowercased().contains(text) ||
+                     $0.city_english_name.lowercased().contains(text) ||
+                     $0.city_explain.lowercased().contains(text)) //  논리 연산자의 우선순위때문에 ()먼저 묶음
                 }
             case 2:
                 Cities = city.filter {
