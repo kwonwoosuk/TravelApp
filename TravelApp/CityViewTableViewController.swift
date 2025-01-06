@@ -72,11 +72,12 @@ class CityViewTableViewController: UITableViewController {
     
     
     func searchContaintextFilter() {
-        //데이터가 항상 기준... 데이터를 세그먼트 컨트롤 처럼 다시 담아
-        
+        //데이터가 항상 기준... 데이터를 세그먼트 컨트롤 처럼 다시 담아 // 고차함수
         // 대소문자 구분없이 검색
         // 공백제거
+        
         //🔥🔥🔥🔥 해당하는 글자 텍스트 컬러 일부 변경...??????? 🔥🔥🔥🔥
+        //https://icksw.tistory.com/152
         guard let text = searchTextField.text?.trimmingCharacters(in: .whitespaces), ((searchTextField.text?.lowercased()) != nil)  else { searchTextField.placeholder = "다시 입력하세요"
             return }
         

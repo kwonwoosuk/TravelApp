@@ -21,19 +21,32 @@
                         <rect key="frame" x="16" y="8" width="441" height="128"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5V-Ha-pfH">
-                        <rect key="frame" x="16" y="93.666666666666671" width="441" height="42.333333333333329"/>
+                        <rect key="frame" x="16" y="96" width="441" height="40"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="cc2-dX-SBx"/>
+                        </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHw-da-lPD">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHw-da-lPD">
                         <rect key="frame" x="403" y="14.999999999999998" width="42" height="20.333333333333329"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <font key="NSFont" metaFont="system" size="17"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbh-Re-66N">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbh-Re-66N">
                         <rect key="frame" x="28" y="104.66666666666667" width="417" height="20.333333333333329"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <font key="NSFont" metaFont="system" size="17"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -50,7 +63,6 @@
                     <constraint firstItem="J6w-2B-hKz" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="SHZ-fB-5Ub"/>
                     <constraint firstItem="G5V-Ha-pfH" firstAttribute="trailing" secondItem="J6w-2B-hKz" secondAttribute="trailing" id="Vvd-Hf-H4y"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Lbh-Re-66N" secondAttribute="trailing" constant="8" id="X7a-OZ-gEr"/>
-                    <constraint firstItem="G5V-Ha-pfH" firstAttribute="centerY" secondItem="Lbh-Re-66N" secondAttribute="centerY" id="aai-5L-yjj"/>
                     <constraint firstItem="G5V-Ha-pfH" firstAttribute="bottom" secondItem="J6w-2B-hKz" secondAttribute="bottom" id="dTn-5V-1VZ"/>
                     <constraint firstItem="J6w-2B-hKz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ekY-vV-ghf"/>
                     <constraint firstItem="iHw-da-lPD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="f67-oB-t4I"/>
