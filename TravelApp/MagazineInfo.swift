@@ -13,6 +13,8 @@ struct Magazine {
     var photo_image: String?
     let date: String
     var link: String?
+    
+    
 }
 
 
