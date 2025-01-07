@@ -40,7 +40,7 @@ class CityViewTableViewCell: UITableViewCell {
         
         labelBackGround.backgroundColor = UIColor.black
         labelBackGround.layer.opacity = 0.5
-        labelBackGround.layer.cornerRadius = 18 // 오른쪽 아래만 15🔥🔥🔥
+        labelBackGround.layer.cornerRadius = 18 
         labelBackGround.layer.maskedCorners = CACornerMask.layerMaxXMaxYCorner
         labelBackGround.clipsToBounds = true
         
@@ -53,9 +53,8 @@ class CityViewTableViewCell: UITableViewCell {
             cityImageView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMaxYCorner)
             cityImageView.clipsToBounds = true
             
-            //🔥🔥🔥🔥🔥모서리 한쪽만 조지는건 나중에... 🔥🔥🔥🔥🔥🔥
-            // MARK: - 커밋시 삭제...
-            //https://velog.io/@loganberry/iOS-View%EC%9D%98-%EB%AA%A8%EC%84%9C%EB%A6%AC-%EB%91%A5%EA%B8%80%EA%B2%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0-feat.-cornerRadius
+        
+         
         }
         
         

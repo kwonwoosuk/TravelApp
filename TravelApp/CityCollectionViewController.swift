@@ -1,5 +1,5 @@
 //
-//  CityViewTableViewController.swift
+//  CityViewController.swift
 //  TravelApp
 //
 //  Created by 권우석 on 1/7/25.
@@ -7,19 +7,35 @@
 
 import UIKit
 
-class CityViewTableViewController: UITableViewController {
-    
+class CityCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     var city = CityInfo().city
     
+    //, UICollectionViewDelegate, UICollectionViewDataSource
+    
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var domesticSeg: UISegmentedControl!
     @IBOutlet weak var searchTextField: UITextField!
     var Cities: [City] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nib = UINib(nibName: CityViewTableViewCell.identifier, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: CityViewTableViewCell.identifier)
+        print(#function)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        let xib = UINib(nibName: CityCollectionViewCell.identifier, bundle: nil)
+        collectionView.register(xib, forCellWithReuseIdentifier: CityCollectionViewCell.identifier)
+        
+        let layout = UICollectionViewFlowLayout()
+        
+        collectionView.collectionViewLayout = layout
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: 100, height: 200)
+        layout.minimumLineSpacing = 16
+        layout.minimumInteritemSpacing = 16
+        
+        layout.sectionInset = UIEdgeInsets(top: 100, left: 50, bottom: 100, right: 50)
         
         domesticSeg.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
         segmentChanged(domesticSeg)
@@ -31,42 +47,33 @@ class CityViewTableViewController: UITableViewController {
         case 0:
             Cities = city
         case 1:
-            Cities = city.filter { $0.domestic_travel } //국내 true
-            // filter - {}안에 들어가는 값이 참을 만족하면 필터링하여 새로운 배열‼️리턴 그래서 배열로 선언...
+            Cities = city.filter { $0.domestic_travel }
         case 2:
             Cities = city.filter { $0.domestic_travel == false }
         default:
             break
         }
-        // 데이터 바꾸면 리로두
-        tableView.reloadData()
+        collectionView.reloadData()
     }
-
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         Cities.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CityViewTableViewCell.identifier) as! CityViewTableViewCell
-        
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CityCollectionViewCell.identifier, for: indexPath) as! CityCollectionViewCell
+            
         let row = Cities[indexPath.row]
         cell.configureData(row: row)
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
-    }
-    
-    // 텍스트필드에 글씨가 입력될때마다 city구조체중 해당되는 키워드가 하나라도 있다면 보여주기
-    // 국내 세그에서 찾는경우 텍스트필드 입력에서도 국내만, 해외세그는 해외만 ^^
-    
-    
     @IBAction func returnKeyTapped(_ sender: UITextField) {
         searchContaintextFilter()
     }
-    @IBAction func searchTextFieldTapped(_ sender: UITextField) {
+    @IBAction func searchingSomething(_ sender: UITextField) {
         searchContaintextFilter()
     }
     
@@ -104,6 +111,9 @@ class CityViewTableViewController: UITableViewController {
                 break
             }
         } //else
-        tableView.reloadData()
+        collectionView.reloadData()
     }
 }
+
+
+
