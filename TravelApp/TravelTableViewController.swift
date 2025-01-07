@@ -17,38 +17,44 @@ class TravelTableViewController: UITableViewController {
         
     }
     
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(#function)
+        print(#function)// 국내 해외나누듯 
         
-        // 1. 스토리 보드 특정
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        // 2. 전환할 뷰 컨트롤러 가져오기
-        let vc = sb.instantiateViewController(withIdentifier: "NextViewController") as! NextViewController
-        //3. 화면을 전환할 방법 선택하기 - push -// 스토리보드 show 우좌
-        navigationController?.pushViewController(vc, animated: true)
-        
-        
-        // MARK: - Pass Data vc가 갖고있는 프로퍼티에 데이터 추가
-        vc.image = travel[indexPath.row].travel_image
-        vc.contentLabel = travel[indexPath.row].title
-        vc.contentdescription = travel[indexPath.row].description
-        
-        vc.navigationItem.title =  "관광지 화면"
-        vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        vc.navigationController?.navigationBar.tintColor = .black
-        
-        let adVc = sb.instantiateViewController(identifier: "AdViewController") as! AdViewController
-        
-        
-        
-        
-        
-        
-        
-        
+        let row = travel[indexPath.row]
+        navigationController?.navigationBar.tintColor = .black
+        if row.ad {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let adVc = sb.instantiateViewController(identifier: "AdViewController") as! AdViewController
+            let nav = UINavigationController(rootViewController: adVc)
+            nav.modalPresentationStyle = .fullScreen
+            
+            adVc.navigationItem.title = "광고 화면"
+                       
+            let dismissButton = UIBarButtonItem(
+                image: UIImage(systemName: "xmark"),
+                style: .plain,
+                target: adVc,
+                action: #selector(AdViewController.leftBarButtonItemTapped)
+            )
+            adVc.navigationItem.leftBarButtonItem = dismissButton
+            adVc.content = row.title
+            
+            present(nav, animated: true)
+            
+        } else {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "NextViewController") as! NextViewController
+            
+            // MARK: - Pass Data vc가 갖고있는 프로퍼티에 데이터 추가
+            vc.image = row.travel_image
+            vc.contentLabel = row.title
+            vc.contentdescription = row.description
+            
+            vc.navigationItem.title = "관광지 화면"
+          
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
-       
     
     @objc func likeButtonTapped(_ sender: UIButton) {
         travel[sender.tag].like?.toggle()

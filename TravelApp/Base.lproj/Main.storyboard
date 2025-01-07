@@ -260,14 +260,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wDc-iX-Xk4">
-                                <rect key="frame" x="16" y="75" width="350" height="350"/>
+                                <rect key="frame" x="16" y="75" width="361" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="Gcx-IL-ivd"/>
                                     <constraint firstAttribute="height" constant="350" id="vEd-JD-lMp"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDv-l8-0ra">
-                                <rect key="frame" x="16" y="433" width="350" height="66"/>
+                                <rect key="frame" x="16" y="433" width="361" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="gZN-fU-Kq2"/>
                                 </constraints>
@@ -276,7 +276,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmL-4h-8i9">
-                                <rect key="frame" x="16" y="507" width="350" height="44"/>
+                                <rect key="frame" x="16" y="507" width="361" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="rW1-Fd-7hk"/>
                                 </constraints>
@@ -285,7 +285,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ha-ql-5eR">
-                                <rect key="frame" x="50" y="567" width="282" height="44"/>
+                                <rect key="frame" x="50" y="567" width="293" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="KEN-d9-IOs"/>
                                 </constraints>
@@ -352,6 +352,9 @@
                             <constraint firstItem="r5R-2N-QU8" firstAttribute="trailing" secondItem="ETz-im-mXi" secondAttribute="trailing" constant="50" id="v09-cN-OJ0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adlabel" destination="ETz-im-mXi" id="bqZ-7R-K6u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0u-J6-Du6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
