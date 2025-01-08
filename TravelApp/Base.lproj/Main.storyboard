@@ -624,16 +624,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AK7-bi-zy0">
-                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <rect key="frame" x="0.0" y="131" width="393" height="729"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tGQ-bI-Qu7">
+                                <rect key="frame" x="0.0" y="103" width="393" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="모두"/>
+                                    <segment title="한식"/>
+                                    <segment title="중식"/>
+                                    <segment title="일식"/>
+                                    <segment title="양식"/>
+                                    <segment title="분식"/>
+                                    <segment title="샐러드"/>
+                                    <segment title="카페"/>
+                                </segments>
+                                <connections>
+                                    <action selector="categorySegmentChanged:" destination="8Te-Et-lJE" eventType="valueChanged" id="Mow-1H-4HT"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="T9q-XN-gj3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="s2T-CK-gD0"/>
                     <connections>
+                        <outlet property="categorySegmentControl" destination="tGQ-bI-Qu7" id="AZT-A6-TAy"/>
                         <outlet property="mapView" destination="AK7-bi-zy0" id="Vyy-wn-mZj"/>
                     </connections>
                 </viewController>
